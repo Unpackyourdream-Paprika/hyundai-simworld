@@ -5,6 +5,9 @@ import {
   OnModuleInit,
 } from '@nestjs/common';
 import { createPool, Pool, ResultSetHeader, RowDataPacket } from 'mysql2';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 @Injectable()
 export class ConnectionService implements OnModuleInit, OnModuleDestroy {

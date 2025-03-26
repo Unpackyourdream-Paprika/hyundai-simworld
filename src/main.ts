@@ -31,10 +31,9 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type,Authorization',
   });
 
-  console.log(process.env.PORT)
-  await app.listen(process.env.PORT ?? 4000);
+  await app.listen(process.env.PORT ?? 4001);
   console.log(
-    `✅ Application is running on: http://localhost:${process.env.PORT ?? 4000} 🚀`,
+    `✅ Application is running on: http://localhost:${process.env.PORT ?? 4001} 🚀`,
   );
 }
 bootstrap();
