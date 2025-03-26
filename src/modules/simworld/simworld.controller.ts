@@ -12,15 +12,10 @@ import * as path from 'path';
 import { MapComponent, MapDataDto } from './dto/map-data.dto';
 import { SimworldService } from './simworld.service';
 import { UpdateSimworldDto } from './dto/modify-update.dto';
-import { TcpService } from '@modules/tcp/tcp.service';
-import { PacketId } from '@modules/packet-handler/interface/packet-id.interface';
 
 @Controller('simworld')
 export class SimworldController {
-  constructor(
-    private readonly simworldService: SimworldService,
-    private readonly tcpService: TcpService,
-  ) {}
+  constructor(private readonly simworldService: SimworldService) {}
 
   @Post('')
   async simworldTest(@Body() body: any) {
@@ -197,12 +192,6 @@ export class SimworldController {
         message: 'World not exist.',
       };
     }
-
-    this.tcpService.sendToClient(
-      PacketId.SEND_SIMWORLD_START,
-      JSON.stringify(simworld),
-      null,
-    );
 
     return {
       success: true,
