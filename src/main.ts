@@ -9,7 +9,7 @@ async function bootstrap() {
 
   app.enableCors();
 
-  app.setGlobalPrefix('api');
+  // app.setGlobalPrefix('api');
 
   app.useGlobalFilters(new GlobalExceptionFilter());
   // app.useGlobalPipes(
